@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 · MeetPR</title>
+<meta name="description" content="MeetPR 隐私政策:我们收集哪些信息、如何使用、教练能看到什么、存放在哪里、你有哪些权利。">
+<meta name="robots" content="index, follow">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1b1d21;
+    --fg-secondary: #52565e;
+    --fg-muted: #7a7f88;
+    --rule: #e4e6ea;
+    --accent: #1f4b73;
+    --card: #f6f7f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --fg: #eceef1;
+      --fg-secondary: #b3b8c0;
+      --fg-muted: #868c96;
+      --rule: #2b2f36;
+      --accent: #8fb8dd;
+      --card: #1c1f25;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 400 17px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC",
+          "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    padding: 0 20px 72px;
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  header { padding: 48px 0 28px; border-bottom: 1px solid var(--rule); }
+  h1 { font-size: 28px; line-height: 1.35; margin: 0 0 12px; letter-spacing: -0.01em; }
+  .meta { color: var(--fg-muted); font-size: 15px; margin: 0; }
+  h2 {
+    font-size: 20px; line-height: 1.45; margin: 44px 0 14px;
+    padding-top: 4px; letter-spacing: -0.005em;
+  }
+  h3 { font-size: 17px; margin: 26px 0 8px; }
+  p { margin: 0 0 14px; color: var(--fg-secondary); }
+  p strong, li strong { color: var(--fg); font-weight: 600; }
+  ul { margin: 0 0 14px; padding-left: 22px; color: var(--fg-secondary); }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  .summary {
+    background: var(--card); border-radius: 12px; padding: 20px 22px;
+    margin: 28px 0 0;
+  }
+  .summary p:last-child { margin-bottom: 0; }
+  .table-wrap { overflow-x: auto; margin: 0 0 18px; }
+  table { border-collapse: collapse; width: 100%; min-width: 460px; font-size: 15.5px; }
+  th, td {
+    text-align: left; vertical-align: top; padding: 11px 14px 11px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  th { color: var(--fg); font-weight: 600; white-space: nowrap; }
+  td { color: var(--fg-secondary); }
+  /* 窄屏(iPhone 从登录页点进来的主路径)不横拖表格,改成「场景 / 具体信息」堆叠块 */
+  @media (max-width: 560px) {
+    .table-wrap { overflow-x: visible; }
+    table { min-width: 0; }
+    thead { display: none; }
+    tbody, tr, td { display: block; }
+    tr { padding: 14px 0; border-bottom: 1px solid var(--rule); }
+    tr:last-child { border-bottom: none; }
+    td { padding: 0; border: none; }
+    td:first-child { color: var(--fg); font-weight: 600; margin-bottom: 3px; }
+  }
+  footer {
+    margin-top: 56px; padding-top: 22px; border-top: 1px solid var(--rule);
+    color: var(--fg-muted); font-size: 15px;
+  }
+  .todo {
+    background: #fff4d6; color: #6b4b00; border-radius: 8px;
+    padding: 2px 7px; font-size: 14px; font-weight: 600;
+  }
+  @media (prefers-color-scheme: dark) {
+    .todo { background: #3d3210; color: #f0d78a; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <h1>MeetPR 隐私政策</h1>
+  <p class="meta">版本 v1.0 · 生效日期 2026 年 7 月 30 日</p>
+</header>
+
+<div class="summary">
+  <p><strong>一句话摘要:</strong>MeetPR 是一款力量举训练 app。我们收集的是让训练本身跑起来所必需的信息——你的手机号、你填的身体与训练资料、你的训练记录、你主动上传的训练视频、你与教练的聊天,以及一份用于改进产品的匿名使用数据。</p>
+  <p>所有数据存放在中国境内自建的阿里云环境,<strong>不接入任何第三方统计或广告 SDK,不出境,不用于广告或跨 app 追踪,不出售、不交换给任何第三方</strong>。你随时可以在 app 内删除账号,数据会一并删除。</p>
+</div>
+
+<h2>1. 我们是谁,本政策管什么</h2>
+<p>本政策由 <span class="todo">【待填:运营主体名称】</span>(以下称"我们")发布,适用于 MeetPR iOS 应用、以及教练使用的 MeetPR 网页端(计划编写与学员管理)。</p>
+<p>使用 MeetPR 前请阅读本政策。如果你不同意其中任何内容,请不要注册或使用本产品。</p>
+
+<h2>2. 我们收集哪些信息</h2>
+<p>我们只在具体场景下收集必需的信息。下表按场景列出全部类别:</p>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>场景</th><th>具体信息</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>注册与登录</td>
+      <td>手机号、登录密码、账号角色(教练 / 学员)。密码以单向哈希(bcrypt)存储,我们无法还原你的原始密码。</td>
+    </tr>
+    <tr>
+      <td>个人资料</td>
+      <td>昵称(展示名)、性别、出生日期、身高、体重、重量单位偏好(kg / lb)。</td>
+    </tr>
+    <tr>
+      <td>训练背景问卷</td>
+      <td>训练年限;深蹲站位(高杠 / 低杠)、硬拉方式(传统 / 相扑)、卧推握距;深蹲 / 卧推 / 硬拉的 1RM 成绩。</td>
+    </tr>
+    <tr>
+      <td>训练环境</td>
+      <td>每周可训练的日子、训练场地档位(家庭 / 商业 / 专业)、可用器械。</td>
+    </tr>
+    <tr>
+      <td>恢复状况</td>
+      <td>日常体力消耗、生活压力、恢复速度、睡眠时长(均为 1–5 档的自评,不是精确数值)。</td>
+    </tr>
+    <tr>
+      <td>伤病与备赛</td>
+      <td>伤病部位、伤病说明(自由文本)、是否备赛、比赛日期、目标级别、给教练的留言(自由文本)。</td>
+    </tr>
+    <tr>
+      <td>训练记录</td>
+      <td>训练计划;你每一组实际完成的重量、次数、RPE、日期与备注;赛前状态(readiness)打卡;训练后的自评与回顾。</td>
+    </tr>
+    <tr>
+      <td>视频与图片</td>
+      <td>你主动拍摄或从相册选择上传的训练视频(<strong>含视频自带的声音</strong>);你在聊天里发送的图片;你在填写问卷时上传的训练材料。</td>
+    </tr>
+    <tr>
+      <td>与教练的聊天</td>
+      <td>你与绑定教练之间的文字消息、图片、已读状态与发送时间。</td>
+    </tr>
+    <tr>
+      <td>使用数据(埋点)</td>
+      <td>匿名安装标识、会话标识、你在 app 内触发的功能事件名与其枚举型参数(如"打开了训练页""保存了计划")、app 版本与构建号、平台、事件时间。<strong>这些事件的参数只包含标识符和固定枚举值,不包含自由文本。</strong></td>
+    </tr>
+    <tr>
+      <td>体验反馈</td>
+      <td>当你在特定环节主动填写"哪里不顺手"时,我们会收到你写的那段文字(不超过 500 字)。这是使用数据里唯一的自由文本。</td>
+    </tr>
+    <tr>
+      <td>服务器日志</td>
+      <td>常规访问日志:请求时间、请求标识、来源 IP、接口路径与状态码。用于排障与安全审计。</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h3>我们不收集的信息</h3>
+<ul>
+  <li><strong>不收集精确地理位置</strong>——app 从不请求定位权限。</li>
+  <li><strong>不读取通讯录、短信、通话记录、日历。</strong></li>
+  <li><strong>不接入 Apple 健康(HealthKit),不读取你的健康数据。</strong></li>
+  <li><strong>不收集广告标识符(IDFA),不做跨 app 或跨网站追踪。</strong>我们在 App Store 的隐私清单里已声明"不用于追踪"。</li>
+  <li><strong>不收集支付信息</strong>——当前版本不含任何内购或付费功能。</li>
+</ul>
+
+<h2>3. 设备权限</h2>
+<p>以下权限都在你首次使用对应功能时才会询问,拒绝后 app 的其余部分照常可用:</p>
+<ul>
+  <li><strong>相机</strong>——拍摄训练视频,供你绑定的教练查看动作并给出反馈。</li>
+  <li><strong>麦克风</strong>——拍摄训练视频时录制现场声音(例如杠铃落地与口令),用于教练回看。</li>
+  <li><strong>相册</strong>——把拍好的训练视频存一份到你自己的相册留底;以及让你选择已有视频上传给教练。</li>
+</ul>
+
+<h2>4. 我们如何使用这些信息</h2>
+<ul>
+  <li><strong>提供核心功能</strong>:让教练为你编写与调整训练计划、让你记录每一组、让教练看到你的视频并给出反馈、让你们在 app 内沟通。</li>
+  <li><strong>计算训练指标</strong>:根据你的记录推算预估最大力量(e1RM)、容量与趋势,呈现在你和你教练的界面上。</li>
+  <li><strong>账号安全</strong>:验证登录、管理多设备会话、在你改密码时吊销其他设备的登录态。</li>
+  <li><strong>改进产品</strong>:通过使用数据了解哪些环节被卡住、哪些功能没人用,据此改设计。</li>
+  <li><strong>排障与安全</strong>:定位报错、发现异常访问。</li>
+</ul>
+<p>我们<strong>不会</strong>把你的信息用于广告投放、用户画像售卖,或与训练无关的自动化决策。</p>
+
+<h2>5. 谁能看到你的数据</h2>
+
+<h3>你绑定的教练</h3>
+<p>MeetPR 的产品形态是教练带学员,所以<strong>你绑定的教练可以看到</strong>:你的资料与训练背景问卷(含伤病说明与给教练的留言)、你的训练计划、你每一组的完成记录与自评、你上传并关联到某一组的训练视频、你的 readiness 打卡,以及你与他/她之间的聊天内容。</p>
+<p>你绑定的教练<strong>看不到</strong>你的手机号与密码。</p>
+
+<h3>其他学员</h3>
+<p>看不到你的任何数据。学员之间没有互相查看的入口。</p>
+
+<h3>我们自己</h3>
+<p>为了排障、内测支持和数据修复,我们的运维人员在必要时可以访问数据库。我们遵循"必要时才看、看最少的量"的原则,并保留操作日志。</p>
+
+<h2>6. 委托处理与第三方</h2>
+<p>我们不向任何第三方出售、出租或交换你的个人信息。为了让服务跑起来,我们使用以下基础设施服务商,他们只按我们的指令处理数据,不能自行使用:</p>
+<ul>
+  <li><strong>阿里云</strong>(阿里云计算有限公司)——提供服务器、数据库(RDS PostgreSQL)与对象存储(OSS,存放视频与图片)。全部位于<strong>中国境内(华东 1 · 杭州)</strong>。</li>
+  <li><strong>Apple</strong>——通过 App Store / TestFlight 分发 app。你的下载与安装行为、以及你在系统层面选择共享的崩溃与性能诊断数据,由 Apple 按其自己的隐私政策处理,我们不经手。</li>
+</ul>
+<p><strong>我们没有接入任何第三方统计、归因或广告 SDK</strong>(如友盟、GA、Firebase Analytics、AppsFlyer 等)。埋点是我们自建的,数据直接进我们自己的数据库。</p>
+<p><strong>数据不出境。</strong>我们不会把你的个人信息传输或存储到中国境外。</p>
+<p>如果将来需要新增第三方处理者(例如引入语音转写服务),我们会先更新本政策,并在 app 内明确告知。</p>
+
+<h2>7. 存放在哪里,保留多久</h2>
+<ul>
+  <li><strong>存放地点</strong>:中国境内自建的阿里云环境(华东 1 · 杭州)。</li>
+  <li><strong>账号与训练数据</strong>:在你的账号存续期间保留。训练记录是有价值的历史,我们不主动删除。</li>
+  <li><strong>使用数据(埋点与体验反馈)</strong>:保留 90 天,之后删除。</li>
+  <li><strong>服务器日志</strong>:保留期以排障与安全审计所需为限。</li>
+  <li><strong>删除账号后</strong>:你的账号及其关联数据(资料、问卷、训练记录、视频、聊天)会被级联删除。已归档的备份会随备份周期自然过期。为保持产品分析的整体形状,历史使用数据中与你的关联标识会被断开(变为无法定位到你的匿名记录),而不是保留你的身份。</li>
+</ul>
+
+<h2>8. 数据安全</h2>
+<ul>
+  <li>登录密码以 bcrypt 单向哈希存储,数据库中没有明文密码。</li>
+  <li>接口访问基于 token 鉴权,支持多设备会话管理;修改密码会吊销全部已登录会话。</li>
+  <li>视频与图片存放在非公开的对象存储桶中,只能通过<strong>短期有效的签名链接</strong>访问,链接过期即失效。</li>
+  <li>数据库启用每日全量备份与时间点恢复能力。</li>
+  <li><strong>内测阶段的已知限制</strong>:当前 app 与服务器之间的部分接口尚未启用 HTTPS 传输加密,我们正在完成这项迁移。在迁移完成前,请知悉这一限制;我们会在完成后更新本政策。</li>
+</ul>
+<p>没有任何系统能保证绝对安全。如果发生个人信息泄露,我们会按法律要求及时通知你并向监管部门报告。</p>
+
+<h2>9. 你的权利,以及怎么行使</h2>
+<ul>
+  <li><strong>查阅与更正</strong>:你的资料、问卷、训练记录都可以在 app 内直接查看和修改。</li>
+  <li><strong>删除账号</strong>:学员可在 app 内"我的 → 账号设置"自助删除账号,删除后数据即被清除,操作不可撤销。<strong>教练账号</strong>因为涉及已绑定学员的训练计划归属,需要通过下方联系方式申请删除,我们会与你确认交接后处理。</li>
+  <li><strong>删除单项内容</strong>:训练视频、聊天图片等可在对应界面单独删除。</li>
+  <li><strong>撤回同意</strong>:你可以在系统设置里随时关闭相机、麦克风、相册权限;关闭后对应功能不可用,其余功能正常。</li>
+  <li><strong>获取副本 / 其他请求</strong>:如需导出你的数据副本,或对本政策有疑问、投诉,请通过下方方式联系我们。我们会在收到请求后 15 个工作日内答复。</li>
+</ul>
+<p>如果你认为我们处理你的个人信息违反了法律规定,你也有权向网信、市场监管等监管部门投诉举报。</p>
+
+<h2>10. 未成年人</h2>
+<p>MeetPR 面向进行杠铃训练的成年人与青少年运动员。<strong>我们不面向 14 岁以下儿童提供服务</strong>,也不会有意收集其个人信息。如果你未满 18 岁,请在监护人同意与知情的前提下使用本产品;如果你是监护人,发现我们在未经你同意的情况下收集了孩子的信息,请联系我们删除。</p>
+
+<h2>11. 本政策的更新</h2>
+<p>产品变化时我们会更新本政策。如果更新涉及收集范围、使用目的或第三方处理者的实质变化,我们会在 app 内以显著方式提示,而不是只改这个页面。页面顶部始终标注当前版本与生效日期。</p>
+
+<h2>12. 联系我们</h2>
+<p>隐私相关的任何问题、请求或投诉,请联系:</p>
+<p><strong>邮箱:</strong><span class="todo">【待填:隐私联系邮箱】</span></p>
+<p>我们会在 15 个工作日内答复。</p>
+
+<footer>
+  <p>MeetPR · 隐私政策 v1.0 · 生效日期 2026 年 7 月 30 日</p>
+</footer>
+
+</main>
+</body>
+</html>
