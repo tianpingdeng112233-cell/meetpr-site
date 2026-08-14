@@ -1,32 +1,198 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MeetPR</title>
-<meta name="description" content="MeetPR — 力量举训练 app,教练与学员双端。">
+<title>MeetPR — Coaching software for powerlifting</title>
+<meta name="description" content="Write the program on the web. Your lifter logs it on their phone. You see every set, every video, every week. MeetPR is coaching software built for powerlifting coaches.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MeetPR — Coaching software for powerlifting">
+<meta property="og:description" content="Write the program on the web. Your lifter logs it on their phone. You see every set, every video, every week.">
+<meta property="og:url" content="https://meetpr.app/">
 <style>
-  :root { color-scheme: light dark; --bg:#fff; --fg:#1b1d21; --fg2:#52565e; --accent:#1f4b73; }
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1b1d21;
+    --fg-secondary: #52565e;
+    --fg-muted: #7a7f88;
+    --rule: #e4e6ea;
+    --accent: #1f4b73;
+    --accent-fg: #ffffff;
+    --card: #f6f7f9;
+  }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#14161a; --fg:#eceef1; --fg2:#b3b8c0; --accent:#8fb8dd; }
+    :root {
+      --bg: #14161a;
+      --fg: #eceef1;
+      --fg-secondary: #b3b8c0;
+      --fg-muted: #868c96;
+      --rule: #2b2f36;
+      --accent: #8fb8dd;
+      --accent-fg: #14161a;
+      --card: #1c1f25;
+    }
   }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
-    background:var(--bg); color:var(--fg); padding:24px;
-    font:400 17px/1.7 -apple-system, BlinkMacSystemFont, "PingFang SC",
-         "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 400 17px/1.7 -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+          Arial, sans-serif;
+    padding: 0 20px 72px;
   }
-  main { max-width:420px; text-align:center; }
-  h1 { font-size:32px; margin:0 0 10px; letter-spacing:-0.01em; }
-  p { color:var(--fg2); margin:0 0 26px; }
-  a { color:var(--accent); text-underline-offset:3px; }
+  main { max-width: 720px; margin: 0 auto; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+
+  header { padding: 72px 0 12px; }
+  .wordmark {
+    font-size: 15px; font-weight: 600; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--fg-muted); margin: 0 0 28px;
+  }
+  h1 {
+    font-size: 38px; line-height: 1.2; margin: 0 0 18px;
+    letter-spacing: -0.02em; max-width: 15ch;
+  }
+  .lede { font-size: 19px; color: var(--fg-secondary); margin: 0 0 32px; max-width: 52ch; }
+
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 0 0 8px; }
+  .btn {
+    display: inline-block; background: var(--accent); color: var(--accent-fg);
+    text-decoration: none; font-weight: 600; font-size: 16px;
+    padding: 12px 22px; border-radius: 10px;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn-note { font-size: 15px; color: var(--fg-muted); }
+
+  h2 {
+    font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--fg-muted);
+    margin: 64px 0 20px; padding-top: 24px; border-top: 1px solid var(--rule);
+  }
+  h3 { font-size: 17px; margin: 0 0 6px; }
+  p { margin: 0 0 14px; color: var(--fg-secondary); }
+  p strong { color: var(--fg); font-weight: 600; }
+
+  .steps { display: grid; gap: 22px; grid-template-columns: 1fr; margin: 0 0 8px; }
+  @media (min-width: 640px) { .steps { grid-template-columns: repeat(3, 1fr); gap: 26px; } }
+  .step .num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--card); color: var(--fg-muted);
+    font-size: 14px; font-weight: 600; margin: 0 0 10px;
+  }
+  .step p { margin: 0; font-size: 16px; }
+
+  .feature { padding: 0 0 22px; }
+  .feature:last-child { padding-bottom: 0; }
+  .feature p { margin: 0; font-size: 16px; }
+
+  .card {
+    background: var(--card); border-radius: 12px; padding: 22px 24px; margin: 0 0 14px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  footer {
+    margin-top: 72px; padding-top: 22px; border-top: 1px solid var(--rule);
+    color: var(--fg-muted); font-size: 15px;
+  }
+  footer p { color: var(--fg-muted); margin: 0 0 8px; }
 </style>
 </head>
 <body>
 <main>
-  <h1>MeetPR</h1>
-  <p>力量举训练 app · 教练与学员双端</p>
-  <p><a href="/privacy">隐私政策</a> · <a href="/privacy/en">Privacy Policy (English)</a></p>
+
+<header>
+  <p class="wordmark">MeetPR</p>
+  <h1>Coaching software for powerlifting.</h1>
+  <p class="lede">Write the program on the web. Your lifter logs it on their phone.
+  You see every set, every video, every week — without chasing spreadsheets or scrolling
+  through a chat thread to find what they actually lifted.</p>
+  <div class="actions">
+    <a class="btn" href="mailto:tianpingdeng@126.com?subject=Founding%20Coach%20%E2%80%94%20MeetPR">Ask about Founding Coach access</a>
+    <span class="btn-note">Beta · a small first group of coaches</span>
+  </div>
+</header>
+
+<h2>How it works</h2>
+<div class="steps">
+  <div class="step">
+    <span class="num">1</span>
+    <h3>You write the plan</h3>
+    <p>Build the week in the browser — sets, reps, load, RPE, tempo. Import an existing
+    spreadsheet if that is how you already work.</p>
+  </div>
+  <div class="step">
+    <span class="num">2</span>
+    <h3>They train and log</h3>
+    <p>Your lifter opens the iOS app, sees today's session, and logs it set by set.
+    Rest timer runs on the lock screen so the phone stays in the pocket.</p>
+  </div>
+  <div class="step">
+    <span class="num">3</span>
+    <h3>You review and adjust</h3>
+    <p>Actual loads, RPE, and video come back to you. Change next week before it starts,
+    not after they have already trained it.</p>
+  </div>
+</div>
+
+<h2>What is in it</h2>
+
+<div class="feature">
+  <h3>Programming that survives contact with a real week</h3>
+  <p>Percentage or RPE, straight sets or waves, top set and back-offs. Anchor load to a
+  tested 1RM, an estimated 1RM, or the lifter's top set that day. Edit a whole block at
+  once instead of cell by cell.</p>
+</div>
+
+<div class="feature">
+  <h3>Video where the set is, not in a separate app</h3>
+  <p>The lifter records a lift against the logged set. You scrub to the frame that matters,
+  mark it, and draw on it. The note lands on that rep, not in a message thread three days later.</p>
+</div>
+
+<div class="feature">
+  <h3>One thread per lifter</h3>
+  <p>Text, images, and voice notes with each lifter, in the same place as their training.
+  Questions about Tuesday's squats stay attached to Tuesday's squats.</p>
+</div>
+
+<div class="feature">
+  <h3>A roster you can actually read</h3>
+  <p>Who trained, who did not, and where each lifter's squat, bench, and deadlift are
+  trending — across everyone you coach, on one screen.</p>
+</div>
+
+<h2>Pricing</h2>
+<div class="card">
+  <p><strong>Coaches subscribe. Lifters use the app for free.</strong> Your lifters never
+  hit a paywall, never get asked for a card, and never see an ad — so bringing your roster
+  across costs them nothing.</p>
+  <p>Founding Coach pricing is not public yet. If you want it before it is, email me and
+  I will send the terms directly.</p>
+</div>
+
+<h2>About</h2>
+<p>MeetPR is built by one developer who lifts. It is in beta: the iOS app is in
+testing, the coach web app is in use, and the roadmap is still short enough that what a
+founding coach asks for can actually change it.</p>
+<p>That is the trade. You get direct access and real influence over what gets built.
+You also get software that is early, and I would rather say that on the front page than
+in an email after you have signed up.</p>
+
+<div class="card">
+  <p><strong>Interested?</strong> Email <a href="mailto:tianpingdeng@126.com?subject=Founding%20Coach%20%E2%80%94%20MeetPR">tianpingdeng@126.com</a>
+  and tell me how many lifters you coach and what you use now. I read every one.</p>
+</div>
+
+<footer>
+  <p><a href="/privacy/en">Privacy Policy</a> · <a href="/privacy">隐私政策(中文)</a></p>
+  <p>© 2026 MeetPR</p>
+</footer>
+
 </main>
 </body>
 </html>
