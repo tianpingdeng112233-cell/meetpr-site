@@ -30,43 +30,47 @@ Namecheap 停放,`192.64.119.206`,没有服务在跑),所以必须真上线一�
 
 ## 部署
 
-### 方案 A(采用中):Cloudflare Pages 直传
+### ✅ 已上线(2026-08-14):GitHub Pages,DNS 托管在 Cloudflare
 
-境外托管,不需要 ICP 备案,免费,自动签 HTTPS 证书,支持裸域。
-**不接 GitHub**——三个静态文件不值得为它建仓接流水线,用 Direct Upload。
+**发布 = `git push origin master`,没有构建步骤。**Pages 直接服务仓库根目录。
 
-**发布前先构建 `dist/`**(只放该公开的文件,`README.md` 有内部部署笔记,直传整个仓会让它公开可读):
+现网拓扑:
 
-```sh
-rm -rf dist && mkdir -p dist/privacy/en
-cp index.html dist/index.html
-cp privacy/index.html dist/privacy/index.html
-cp privacy/en/index.html dist/privacy/en/index.html
+```
+注册商        Namecheap(AUTO-RENEW 已开,2027-04-07 到期)
+NS            dee.ns.cloudflare.com / yisroel.ns.cloudflare.com
+DNS 记录      Cloudflare zone meetpr.app(Free):
+                @    A      185.199.108.153 / .109.153 / .110.153 / .111.153
+                www  CNAME  tianpingdeng112233-cell.github.io
+              六条全部 DNS only(灰云)
+托管          GitHub Pages,仓 tianpingdeng112233-cell/meetpr-site,
+              源 = master 分支 / (root),CNAME 文件内容 meetpr.app
+证书          Let's Encrypt,GitHub 自动签发与续期,Enforce HTTPS 已开
 ```
 
-`dist/` 已在 `.gitignore`,不入仓。
+**云朵必须是灰色 DNS only。**开着 Cloudflare 代理,GitHub 摸不到域名就签不出证书,
+症状是 Pages 设置页一直显示 "certificate has not yet been issued",且看不出原因。
 
-进度(2026-08-14):
+**`_config.yml` 把 `README.md` 挡在网站之外**(Pages 服务仓库根目录,不挡的话
+`https://meetpr.app/README.md` 能取到本文件)。挡不住 github.com 仓库页——
+**这个仓是 public**(免费档 Pages 的硬要求),所以本文件永远不写凭证、密钥、未公开的产品主张。
 
-1. ✅ Cloudflare 加站 `meetpr.app`,Free 档,**Manual entry**(不导入旧记录——
-   原有 A/www/5×MX/SPF 全是 Namecheap 停放页与空转的邮件转发默认值,已核实无用)。
-2. ✅ Namecheap → Domain → Nameservers → Custom DNS,填:
-   `dee.ns.cloudflare.com` / `yisroel.ns.cloudflare.com`。AUTO-RENEW 已开。
-3. ⏳ 等注册局侧生效(Namecheap 提示最长 48h)。核实方式**只能查不能信页面**:
-   `dig @ns-tld1.charlestonroadregistry.com meetpr.app NS`,看到 cloudflare 才算数。
-4. ⬜ Workers & Pages → Create → Pages → **Upload assets**,项目名 `meetpr-site`,
-   拖 `dist` **整个文件夹**(拖里面的文件会丢掉 `/privacy/en` 的目录层级)。
-5. ⬜ Pages 项目 → Custom domains → 加 `meetpr.app`。zone 转 active 后才会签证书。
+历史包袱:仓里 `dist/` 与 `.gitignore` 里那条是 Cloudflare Pages 直传方案的残留,已废弃。
 
-### 上线后必须同步的外部配置
+### 还没做的外部配置(要 Apple ID,只能 David 手动)
 
-- **App Store Connect(海外条目 6799519592)** → App 信息 → 隐私政策 URL
+- **App Store Connect 海外条目 6799519592** → App 信息 → 隐私政策 URL
   填 `https://meetpr.app/privacy/en`(**英文版**,不是 `/privacy`)。
-- **App Store Connect(国内条目)** → 隐私政策 URL 填 `https://meetpr.app/privacy`(中文版)。
-  该路径被 iOS 仓 `AnalyticsPrivacyNotice.swift` 硬编码,**永远不能改动或重定向走**。
-- 验证:`curl -sI https://meetpr.app/privacy | head -3` 应为 200。
+- **App Store Connect 国内条目** → 隐私政策 URL 填 `https://meetpr.app/privacy`(中文版)。
+  该路径被 iOS 仓 `AnalyticsPrivacyNotice.swift:33` 硬编码,**永远不能改动或重定向走**。
 
-### 方案 B:后端同源(阿里云杭州)
+### 已作废的备选方案(留档防止重新论证)
+
+**Cloudflare Pages 直传**:2026-08-14 下午实际搭通过并跑了一遍(域名、证书、404 全绿),
+但与当天上午已定的 GitHub Pages 撞车,当天回滚到 GitHub。功能上两者对访客无差别,
+GitHub 胜在 push 即部署;Cloudflare 胜在仓可以 private。选 GitHub 后仓必须 public。
+
+**方案 B:后端同源(阿里云杭州)**
 
 **不推荐**,原因见下:
 
