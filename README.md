@@ -3,8 +3,9 @@
 只有两个页面,纯静态,零依赖、零构建:
 
 ```
-index.html          → https://meetpr.app/
-privacy/index.html  → https://meetpr.app/privacy
+index.html             → https://meetpr.app/
+privacy/index.html     → https://meetpr.app/privacy
+privacy/en/index.html  → https://meetpr.app/privacy/en(海外版 ASC 送审用)
 ```
 
 `privacy/index.html` 而不是 `privacy.html`,是为了让 `/privacy`(无扩展名)在任何静态托管上都能直接命中。
