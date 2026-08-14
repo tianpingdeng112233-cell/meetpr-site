@@ -1,0 +1,6 @@
+# GitHub Pages 直接服务仓库根目录,而这个仓是 public(免费档 Pages 的硬要求)。
+# README.md 是内部部署笔记,不该能从 https://meetpr.app/README.md 取到。
+# 注意:这只挡住网站,挡不住 github.com 上的仓库页面——仓是 public,
+# 所以 README 里永远不要写凭证、内部地址、未公开的产品主张。
+exclude:
+  - README.md
