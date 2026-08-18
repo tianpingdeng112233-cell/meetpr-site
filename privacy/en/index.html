@@ -72,16 +72,16 @@
 
 <header>
   <h1>MeetPR Privacy Policy</h1>
-  <p class="meta">Version 1.0 · Effective August 14, 2026 · <a href="/privacy">中文版</a></p>
+  <p class="meta">Version 1.1 · Effective August 18, 2026 · <a href="/privacy">中文版</a></p>
 </header>
 
 <div class="summary">
   <p><strong>In one sentence:</strong> MeetPR is a powerlifting training app. We collect only what is needed to make training work — your sign-in details, the profile and training background you fill in, your training logs, the training videos you choose to upload, your chat with your coach, and anonymous usage data used to improve the product.</p>
-  <p>All data is stored in our own environment on Alibaba Cloud in mainland China. <strong>We use no third-party analytics or advertising SDKs, we do not use your data for advertising or cross-app tracking, and we never sell, rent, or trade it to anyone.</strong> You can delete your account in the app at any time, and its data is deleted with it.</p>
+  <p>All data is stored in our own environment in the United States — DigitalOcean (servers and database, New York) and Cloudflare R2 (video and image storage). <strong>We use no third-party analytics or advertising SDKs, we do not use your data for advertising or cross-app tracking, and we never sell, rent, or trade it to anyone.</strong> You can delete your account in the app at any time, and its data is deleted with it.</p>
 </div>
 
 <h2>1. Who we are and what this policy covers</h2>
-<p>This policy is published by Tianping Deng ("we", "us"), an individual developer. It applies to the MeetPR iOS app and the MeetPR web app used by coaches for plan writing and student management.</p>
+<p>This policy is published by Tianping Deng ("we", "us"), an individual developer. It applies to the international edition of the MeetPR iOS app and the MeetPR web app used by coaches for plan writing and student management. (The Chinese-mainland edition of MeetPR is a separate service covered by the <a href="/privacy">Chinese policy</a>.)</p>
 <p>Please read this policy before using MeetPR. If you do not agree with any part of it, please do not create an account or use the product.</p>
 
 <h2>2. What we collect</h2>
@@ -194,7 +194,8 @@
 <h2>6. Service providers and third parties</h2>
 <p>We do not sell, rent, or trade your personal information to any third party. To run the service we use the following infrastructure providers, who process data only on our instructions and cannot use it for their own purposes:</p>
 <ul>
-  <li><strong>Alibaba Cloud</strong> — servers, database (RDS PostgreSQL), and object storage (OSS, holding videos and images). All located in <strong>mainland China (China East 1 · Hangzhou)</strong>.</li>
+  <li><strong>DigitalOcean</strong> — servers and managed database (PostgreSQL), located in the <strong>United States (New York)</strong>.</li>
+  <li><strong>Cloudflare</strong> — R2 object storage holding videos and images, located in the <strong>United States</strong>.</li>
   <li><strong>Apple</strong> — Sign in with Apple, and app distribution through the App Store / TestFlight. Your download activity, and any crash or performance diagnostics you have chosen to share at the system level, are handled by Apple under Apple's own privacy policy and do not pass through us.</li>
   <li><strong>Google</strong> — Sign in with Google, if you choose it. Google's handling of your Google account is governed by Google's own privacy policy.</li>
   <li><strong>Resend</strong> — delivery of transactional email (such as password-reset messages). Resend processes your email address and the message content for delivery only.</li>
@@ -203,7 +204,7 @@
 
 <h2>7. Where your data is stored, and international transfers</h2>
 <ul>
-  <li><strong>Storage location</strong>: our own Alibaba Cloud environment in mainland China (China East 1 · Hangzhou). <strong>If you use MeetPR from outside China, your information is transferred to and stored on servers in China</strong>, where data-protection laws may differ from those of your country. By using MeetPR you acknowledge this transfer.</li>
+  <li><strong>Storage location</strong>: our own environment in the <strong>United States</strong> (DigitalOcean, New York; Cloudflare R2). <strong>If you use MeetPR from outside the United States, your information is transferred to and stored on servers in the United States</strong>, where data-protection laws may differ from those of your country. By using MeetPR you acknowledge this transfer.</li>
   <li><strong>Account and training data</strong>: kept for as long as your account exists. Training history is valuable to you, so we do not delete it proactively.</li>
   <li><strong>Usage data and experience feedback</strong>: kept for 90 days, then deleted.</li>
   <li><strong>Server logs</strong>: kept only as long as troubleshooting and security auditing require.</li>
@@ -217,7 +218,7 @@
   <li>API access is token-based, with per-device session management; changing your password revokes all signed-in sessions.</li>
   <li>Videos and images live in a non-public storage bucket, reachable only through <strong>short-lived signed links</strong> that expire.</li>
   <li>The database has daily full backups and point-in-time recovery.</li>
-  <li><strong>Known beta limitation</strong>: some connections between the app and our servers do not yet use HTTPS transport encryption. We are completing this migration and will update this policy when it is done.</li>
+  <li>All connections between the app and our servers use HTTPS transport encryption.</li>
 </ul>
 <p>No system can guarantee absolute security. If a personal-data breach occurs, we will notify you and the relevant authorities as required by law.</p>
 
