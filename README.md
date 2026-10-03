@@ -107,7 +107,7 @@ curl -sI --max-time 15 https://meetpr.app/privacy | head -3
 |---|---|
 | 收集的字段 | `MeetPR-backend/db/migrations/` — `0001-init-users` / `0003.5-init-profile-tables` / `0013-init-onboarding-profiles`(29 字段问卷)/ `0029-init-events` / `0030-init-analytics-feedback` / `0045-init-chat` |
 | 埋点不含自由文本 | `0029-init-events.sql` 表头注释:`props are ids/enums only — never free text` |
-| 使用数据保留 90 天 | `0029-init-events.sql` 注释 + `specs/008-analytics-events/SPEC.md §7`。⚠️ **清理任务尚未实装**,见下方待办 |
+| 使用数据在账号存续期间保留 | David 2026-10-03 定:不再承诺 90 天(后端从未实装到期清理)。删号后的去关联见下一行 `0029` / `0030` 的 `ON DELETE SET NULL` |
 | 不接第三方 SDK / 不追踪 | `MeetPR/PrivacyInfo.xcprivacy`:`NSPrivacyTracking=false`、`NSPrivacyTrackingDomains` 空、五类数据全部 `Tracking=false` |
 | 权限文案 | `MeetPR/Info.plist` 的四条 `*UsageDescription`(原文照搬,只做了句式统一) |
 | 教练看不到手机号 | `src/routes/coach.ts` 学员响应只有 `display_name` 等,无 `phone` |
@@ -119,8 +119,6 @@ curl -sI --max-time 15 https://meetpr.app/privacy | head -3
 
 ## 上线后的两个跟进项
 
-1. **90 天清理任务没实装**。`events` / `analytics_feedback` 的 90 天保留期目前只写在 spec 注释里,
-   没有定时清理。政策一旦发布,这句话就是对外承诺——需要补一个清理任务(cron 或部署侧定时),
-   否则政策与实际不一致。
+1. ~~90 天清理任务没实装~~(2026-10-03 已处理):政策改为"账号存续期间保留",不再需要到期清理任务。App 内首启告知同步改口径(iOS / 安卓各一张卡)。
 2. **语音转写上线时要改政策**。聊天语音波(阿里云 ISI 录音文件识别)一旦上线,
    §6 就要新增一个第三方处理者,§2 要新增语音消息类别。现在的政策只描述已上线形态。
