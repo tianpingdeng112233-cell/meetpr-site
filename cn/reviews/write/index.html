@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>const p=location.pathname;const b=document.createElement("base");b.href=p.slice(0,p.indexOf("/reviews")+8)+"/";document.head.append(b);</script>
+<title>力量举教练点评</title>
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/write.css">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-page="write">
+<div class="page">
+  <div class="dots" aria-hidden="true"></div>
+  <div class="top"><a class="back" href="c/">← BACK</a><span class="tag tag--grey">力量举教练点评</span></div>
+  <form class="form" aria-labelledby="w-h">
+    <div><span class="tag">WRITE A REVIEW</span><h1 id="w-h">写点评</h1></div>
+
+    <label class="field"><span>你的昵称</span><input class="input" type="text" name="nickname" required autocomplete="nickname"><small>第一次写点评时设置，以后都用这个名字。2–16 个字。</small></label>
+
+    <fieldset class="field" style="border:0;margin:0;padding:0;">
+      <legend class="tag" style="margin-bottom:12px;">TOTAL // 总分</legend>
+      <div class="total" role="radiogroup" aria-label="总分">
+        <button type="button" class="on" aria-label="1 星">★</button><button type="button" class="on" aria-label="2 星">★</button><button type="button" class="on" aria-label="3 星">★</button><button type="button" class="on" aria-label="4 星">★</button><button type="button" aria-label="5 星">★</button>
+      </div>
+    </fieldset>
+
+    <fieldset class="field" style="border:0;margin:0;padding:0;">
+      <legend class="tag" style="margin-bottom:6px;">SCORES // 四项</legend>
+      <div class="subrow"><span>专业度</span><span class="pick"><button class="on">★</button><button class="on">★</button><button class="on">★</button><button class="on">★</button><button class="on">★</button></span></div>
+      <div class="subrow"><span>沟通反馈</span><span class="pick"><button class="on">★</button><button class="on">★</button><button class="on">★</button><button class="on">★</button><button>★</button></span></div>
+      <div class="subrow"><span>训练效果</span><span class="pick"><button class="on">★</button><button class="on">★</button><button class="on">★</button><button class="on">★</button><button>★</button></span></div>
+      <div class="subrow"><span>性价比</span><span class="pick"><button class="on">★</button><button class="on">★</button><button class="on">★</button><button class="on">★</button><button>★</button></span></div>
+    </fieldset>
+
+    <label class="field"><span>说说你的体验</span>
+      <textarea class="input" name="body" rows="6" required placeholder="跟了他多久？计划和反馈怎么样？成绩有没有变化？"></textarea>
+      <span class="count"><span>至少 10 个字</span><span>0 / 1000</span></span>
+    </label>
+
+    
+
+    <button class="btn btn--solid btn--block" type="submit">发布点评</button>
+    <p class="fine">一位教练你只能写一条点评，发布后可以随时修改或删除。</p>
+  </form>
+</div>
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>

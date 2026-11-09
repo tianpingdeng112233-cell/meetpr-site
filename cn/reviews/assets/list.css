@@ -1,0 +1,16 @@
+
+.list-head { display: flex; flex-direction: column; gap: 28px; }
+.list-tools { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; margin-top: 8px; }
+.list-meta { margin-top: 48px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.roster { padding: 0 40px 112px; }
+.more { display: inline-block; margin-top: 36px; font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-decoration: none; border-bottom: 1px solid var(--red); padding-bottom: 4px; }
+.submit-row { margin-top: 64px; padding: 28px 32px; border: 1px solid var(--line); border-left: 3px solid var(--red); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; background: var(--panel); }
+.submit-row b { font-size: 20px; font-weight: 900; }
+.submit-row p { margin: 6px 0 0; font-size: 15px; color: var(--grey); }
+@media (max-width: 720px) {
+  .roster { padding: 0 16px 72px; }
+  .list-meta { margin-top: 32px; }
+  .submit-row { padding: 22px 18px; }
+  .submit-row .btn { width: 100%; }
+}
+

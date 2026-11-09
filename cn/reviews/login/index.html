@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>const p=location.pathname;const b=document.createElement("base");b.href=p.slice(0,p.indexOf("/reviews")+8)+"/";document.head.append(b);</script>
+<title>力量举教练点评</title>
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/login.css">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-page="login">
+<section class="stage">
+  <img class="stage__photo" src="assets/img/plates.jpg" alt="" aria-hidden="true">
+  <div class="dots" aria-hidden="true"></div>
+  <div class="top"><a class="back" href="c/">← BACK</a><span class="tag tag--grey">力量举教练点评</span></div>
+  <form class="box" aria-labelledby="login-h">
+    <div><span class="tag">SIGN IN // 手机号登录</span><h1 id="login-h">登录<span>登录后写点评</span></h1></div>
+    <p class="note">只用手机号登录。点评里只显示你起的昵称，不会显示手机号。</p>
+    <label class="field"><span>手机号</span><div class="phone"><span>+86</span><input class="input" type="tel" name="phone" required pattern="1[0-9]{10}" autocomplete="tel" aria-label="手机号"></div></label>
+    <label class="field"><span>验证码</span><div class="code"><input class="input" type="text" name="code" required pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" inputmode="numeric" placeholder="6 位验证码" aria-label="验证码"><button class="btn btn--dark" type="button" id="send-code">获取验证码</button></div></label>
+    <button class="btn btn--solid btn--block" type="submit">登录</button>
+    <p class="terms">登录即表示同意 <a class="link-red" data-policy="terms" href="#">用户协议</a> 和 <a class="link-red" data-policy="privacy" href="#">隐私政策</a>。</p>
+  </form>
+</section>
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>

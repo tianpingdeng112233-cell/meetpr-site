@@ -4,3 +4,4 @@
 # 所以 README 里永远不要写凭证、内部地址、未公开的产品主张。
 exclude:
   - README.md
+  - cn

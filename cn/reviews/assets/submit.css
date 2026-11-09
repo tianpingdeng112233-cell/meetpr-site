@@ -1,0 +1,13 @@
+
+.page { position: relative; isolation: isolate; overflow: hidden; }
+.page > .dots { right: 0; top: 0; width: 46%; height: 520px; -webkit-mask-image: linear-gradient(240deg, #000 0%, transparent 70%); mask-image: linear-gradient(240deg, #000 0%, transparent 70%); opacity: .3; }
+.top { display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; border-bottom: 1px solid var(--line2); }
+.form { width: min(640px, 100% - 32px); margin: 0 auto; padding: 48px 0 80px; display: flex; flex-direction: column; gap: 24px; }
+.form h1 { margin: 10px 0 0; font-size: 56px; font-weight: 900; letter-spacing: .02em; line-height: 1.04; }
+.form h1 span { display: block; color: #bdbdbd; font-size: .45em; margin-top: 10px; letter-spacing: .04em; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.more { display: flex; justify-content: space-between; align-items: center; height: 56px; padding: 0 18px; background: #121212; border: 1px dashed #3a3a3a; color: #cfcfcf; font-size: 15px; }
+.more em { font-style: normal; font-family: var(--mono); font-size: 12px; letter-spacing: .1em; color: var(--grey); }
+.fine { margin: 0; font-size: 13px; color: var(--grey); line-height: 1.7; }
+@media (max-width: 720px) { .form { padding-top: 32px; } .form h1 { font-size: 44px; } .more em { display: none; } }
+

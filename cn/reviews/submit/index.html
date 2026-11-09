@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>const p=location.pathname;const b=document.createElement("base");b.href=p.slice(0,p.indexOf("/reviews")+8)+"/";document.head.append(b);</script>
+<title>力量举教练点评</title>
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="assets/submit.css">
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body data-page="submit">
+<div class="page">
+  <div class="dots" aria-hidden="true"></div>
+  <div class="top"><a class="back" href="coaches/">← BACK</a><span class="tag tag--grey">力量举教练点评</span></div>
+  <form class="form" aria-labelledby="s-h">
+    <div><span class="tag">SUBMIT A COACH // 提交教练</span><h1 id="s-h">提交一位教练<span>只填公开过的信息，审核后上线</span></h1></div>
+    <label class="field"><span>姓名 / 称呼</span><input name="name" required maxlength="200" class="input" placeholder="真名或圈内常用称呼"></label>
+    <label class="field"><span>网名</span><input name="nickname" required maxlength="200" class="input" placeholder="抖音昵称等"></label>
+    <div class="two">
+      <label class="field"><span>抖音号</span><input name="douyin_handle" required maxlength="200" class="input" placeholder="主页里的抖音号"></label>
+      <label class="field"><span>抖音主页链接</span><input name="douyin_url" required maxlength="200" class="input" placeholder="https://"></label>
+    </div>
+    <div class="field"><span>性别</span><div class="seg"><button type="button" class="on">男</button><button type="button">女</button></div></div>
+    <div class="two">
+      <label class="field"><span>省份</span><select name="province" required class="input"><option>请选择</option></select></label>
+      <label class="field"><span>城市</span><input name="city" required maxlength="200" class="input" placeholder="如：深圳"></label>
+    </div>
+    <label class="field"><span>所属场馆 / 工作室</span><input name="gyms" required maxlength="200" class="input" placeholder="可填多个，用逗号隔开；没有就填「无」"></label>
+    <div class="field"><span>授课方式</span><div class="seg"><button type="button">线下</button><button type="button">线上</button><button type="button" class="on">线上+线下</button></div></div>
+    <details id="optional"><summary class="more"><span>＋ 补充选填信息</span><em>成绩 · 认证 · 执教年限</em></summary><div id="optional-fields"></div></details>
+    <button class="btn btn--solid btn--block" type="submit">提交，等待审核</button>
+    <p class="fine">抖音号已经在列表里的教练，会直接带你去他的页面。</p>
+  </form>
+</div>
+<script type="module" src="assets/app.js"></script>
+</body>
+</html>
