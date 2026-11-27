@@ -124,3 +124,16 @@ curl -sI --max-time 15 https://meetpr.app/privacy | head -3
    否则政策与实际不一致。
 2. **语音转写上线时要改政策**。聊天语音波(阿里云 ISI 录音文件识别)一旦上线,
    §6 就要新增一个第三方处理者,§2 要新增语音消息类别。现在的政策只描述已上线形态。
+
+## meetpr.cn（阿里云轻量）
+
+meetpr.cn 由阿里云轻量服务器上的 nginx 提供服务，站点根目录为 `/var/www/meetpr`。
+
+| 仓库文件 | 服务器文件 |
+| --- | --- |
+| `cn/index.html` | `/var/www/meetpr/index.html` |
+| `privacy/index.html` | `/var/www/meetpr/privacy/index.html` |
+| `privacy/en/index.html` | `/var/www/meetpr/privacy/en/index.html` |
+| `terms/index.html` | `/var/www/meetpr/terms/index.html` |
+
+修改隐私政策或用户服务协议正文后，两处都要部署：将更新发布到 GitHub Pages（meetpr.app），并按上表将对应文件部署到轻量服务器（meetpr.cn）。
